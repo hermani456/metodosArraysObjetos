@@ -201,8 +201,11 @@ const pacientes = totalConsultas.map(pacienteFilter).join(' - ')
 const escribirPacientes = document.querySelector('#listado-pacientes')
 escribirPacientes.innerHTML = pacientes
 
+// callback isapre
+const previIsapre = previ => previ.PREVISION === "ISAPRE"
+
 // filtra la prevision a isapre para dental
-const dentalFilter = dental.filter(previ => previ.PREVISION === "ISAPRE")
+const dentalFilter = dental.filter(previIsapre)
 
 // mapea solo los pacientes y separa sus nombres con un guion (join)
 const dentalEscribir = dentalFilter.map(pacienteFilter).join(' - ')
@@ -211,9 +214,11 @@ const dentalEscribir = dentalFilter.map(pacienteFilter).join(' - ')
 const escribeDentalFiltered = document.querySelector('#dental-filtrado')
 escribeDentalFiltered.innerHTML = dentalEscribir
 
+// callback fonasa
+const previFonasa = previ => previ.PREVISION === "FONASA"
 
 // filtra la prevision a fonasa para traumatologia
-const traumatologiaFilter = traumatologiaNuevo.filter(previ => previ.PREVISION === "FONASA")
+const traumatologiaFilter = traumatologiaNuevo.filter(previFonasa)
 
 // mapea solo los pacientes y separa sus nombres con un guion (join)
 const traumatologiaEscribir = traumatologiaFilter.map(pacienteFilter).join(' - ')
@@ -221,6 +226,3 @@ const traumatologiaEscribir = traumatologiaFilter.map(pacienteFilter).join(' - '
 // escribe el resultado del filtro de traumatologia en el dom
 const escribeTraumatologiaFiltered = document.querySelector('#traumatologia-filtrado')
 escribeTraumatologiaFiltered.innerHTML = traumatologiaEscribir
-
-
-
