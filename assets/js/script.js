@@ -188,7 +188,7 @@ const creaTabla = (id, array, title) => {
 // imprime al dom la lista de dental separadas por guion
 creaTabla("#consultas-medicas", dental, "Dental")
 
-// shortcut para los map
+// callback para los map
 const pacienteFilter = paciente => paciente.PACIENTE
 
 // une todos los arrays en uno para poder imprimir la lista de todos los pacientes
